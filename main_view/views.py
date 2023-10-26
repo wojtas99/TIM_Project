@@ -9,16 +9,19 @@ from rest_framework.authtoken.models import Token
 from django.http import HttpResponse
 
 
-
 def index(request):
     return HttpResponse("Succes Login")
 
+
 class ReactView(APIView):
     serializer_class = ReactSerializer
+
     def login_or_register_view(self, request):
         serializer = ReactSerializer(data=request.data)
         if request.method == 'POST':
-            if request.POST.get('action') == 'login':
+            data = request.POST
+            action = data.get("login")
+            if action == "login":
                 if serializer.is_valid(raise_exception=True):
                     login = serializer.validated_data['login']
                     password = serializer.validated_data['password']
@@ -29,7 +32,7 @@ class ReactView(APIView):
                     else:
                         return Response({'error': 'Failed to login.'}, status=status.HTTP_400_BAD_REQUEST)
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            elif request.POST.get('action') == 'register':
+            else:
                 if serializer.is_valid(raise_exception=True):
                     serializer.save()
                     return Response(serializer.data)
