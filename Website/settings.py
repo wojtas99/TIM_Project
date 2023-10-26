@@ -76,7 +76,7 @@ DATABASES = {
         "NAME": "TIM_Projekt_DB",
         "USER": "postgres",
         "PASSWORD": "opolan",
-        "HOST": "localhost",
+        "HOST": "localhost.pl",
         "PORT": "5432",
     }
 }
