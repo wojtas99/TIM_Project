@@ -13,28 +13,29 @@ def index(request):
     return HttpResponse("Succes Login")
 
 
-class ReactView(APIView):
+
+class Login(APIView):
     serializer_class = ReactSerializer
 
-    def login_or_register_view(self, request):
+    def post(self, request):
         serializer = ReactSerializer(data=request.data)
-        if request.method == 'POST':
-            data = request.POST
-            action = data.get("login")
-            if action == "login":
-                if serializer.is_valid(raise_exception=True):
-                    login = serializer.validated_data['login']
-                    password = serializer.validated_data['password']
-                    user = authenticate(request, username=login, password=password)
-                    if user is not None:
-                        token, _ = Token.objects.get_or_create(user=user)
-                        return redirect('/success')
-                    else:
-                        return Response({'error': 'Failed to login.'}, status=status.HTTP_400_BAD_REQUEST)
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if serializer.is_valid(raise_exception=True):
+            login = serializer.validated_data['login']
+            password = serializer.validated_data['password']
+            user = authenticate(request, username=login, password=password)
+            if user is not None:
+                token, _ = Token.objects.get_or_create(user=user)
+                return redirect('/success')
             else:
-                if serializer.is_valid(raise_exception=True):
-                    serializer.save()
-                    return Response(serializer.data)
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'error': 'Failed to login.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class Register(APIView):
+    serializer_class = ReactSerializer
+    def post(self, request):
+        serializer = ReactSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
 
