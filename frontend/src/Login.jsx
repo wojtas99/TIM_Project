@@ -1,6 +1,10 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
+import { IoIosHome } from "react-icons/io";
+import "./Login.css"
 
 export const Login = (props) => {
+    const navigate = useNavigate();
     const [login, setlogin] = useState('');
     const [password, setpassword] = useState('');
 
@@ -24,6 +28,7 @@ export const Login = (props) => {
         .then((response) => {
           if (response.ok) {
             alert("Logowanie udana!");
+            window.location.href = '/success'; 
           } else {
             alert("Błąd logowanie. Spróbuj ponownie.");
           }
@@ -33,14 +38,16 @@ export const Login = (props) => {
         });
     };
   
+    const navigateToStartPage = () => {
+      navigate("/");
+    };
+  
+    const refreshPage = () => {
+      window.location.reload();
+    };
 
     return (
         <div className="auth-form-container">
-                <div className="welcome-container">
-                    <h2>Welcome to Our Website</h2>
-                    <p>Want to try a new sport? But You don't know where to seek for it? <br></br>We are here just for YOU!</p>
-                </div>
-
             <form className="login-form" onSubmit={handleSubmit}>
                 <h1>Log In</h1>
                 <label htmlFor="login"> Login</label>
@@ -48,9 +55,16 @@ export const Login = (props) => {
                 <label htmlFor="password"> Password</label>
                 <input value={password} onChange={(e) => setpassword(e.target.value)} type="password" placeholder="*******" id="password" name="password" />
                 <button type="submit">Log In</button>
-                <button className='link-button' onClick={() =>props.onFormSwitch('register')}> Don't have an account? Register here.</button>
-            </form>
 
+                <button className="home-button" onClick={() => {
+                navigateToStartPage();
+                refreshPage();
+              }}>
+                <IoIosHome />
+              </button>
+            </form>
         </div>
     );
 };
+
+export default Login;

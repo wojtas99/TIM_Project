@@ -13,26 +13,6 @@
   flex-direction: column;
 }
 
-.welcome-container {
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.welcome-container h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.welcome-container p {
-  font-size: 16px;
-  color: #666;
-}
-
 .login-form{
   padding: 5rem;
   border-radius: 10px;
@@ -51,9 +31,7 @@
   padding: 5rem;
   border-radius: 10px;
   margin: 0;
-  background-color: rgba(74, 74, 74, 0.7);
 }
-
 
 label {
   text-align: left;
@@ -73,10 +51,4 @@ button{
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.link-button{
-  background: none;
-  color: white;
-  text-decoration: underline;
 }

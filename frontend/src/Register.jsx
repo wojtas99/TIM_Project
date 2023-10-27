@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { IoIosHome } from "react-icons/io";
+import "./Register.css";
 
-export const Register = (props) => {
+export const Register = () => {
+  const navigate = useNavigate();
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [email_address, setEmail] = useState("");
@@ -35,25 +39,37 @@ export const Register = (props) => {
       });
   };
 
+  const navigateToStartPage = () => {
+    navigate("/");
+  };
+
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
+
   return (
     <div className="auth-form-container">
-
-      <div className="welcome-container">
-        <h2>Welcome to Our Website</h2>
-        <p>Want to try a new sport? But You don't know where to seek for it? <br></br>We are here just for YOU!</p>
-      </div>
-        <form className="register-form" onSubmit={handleSubmit}>
-          <h1>Register</h1>
-          <label htmlFor="login"> Login</label>
-          <input value={login} onChange={(e) => setLogin(e.target.value)} type="text" placeholder="Your Login" id="login" name="login"/>
-          <label htmlFor="password"> Password</label>
-          <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="*******" id="password" name="password"/>
-          <label htmlFor="email"> Email</label>
-          <input value={email_address} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your.email@com.pl" id="email" name="email"/>
-          <button type="submit">Register</button>
-          <button className="link-button" onClick={() => props.onFormSwitch("login")}> Already have an account? Login here. </button>
-        </form>
-
+       <form className="register-form" onSubmit={handleSubmit}>
+        <h1>Register</h1>
+        <label htmlFor="login">Login</label>
+        <input value={login} onChange={(e) => setLogin(e.target.value)} type="text" placeholder="Your Login" id="login" name="login" />
+        <label htmlFor="password">Password</label>
+        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="*******" id="password" name="password" />
+        <label htmlFor="email">Email</label>
+        <input value={email_address} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your.email@com.pl" id="email" name="email" />
+        <button type="submit">Register</button>
+        
+        <button className="home-button" onClick={() => {
+          navigateToStartPage();
+          refreshPage();
+        }}>
+          <IoIosHome />
+        </button>
+      </form>
     </div>
   );
 };
+
+
+export default Register;

@@ -1,0 +1,62 @@
+/* Resetowanie domyślnych styli dla elementów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url("C:\\Projekt\\react_register_form-main\\back_v2.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  .main-page {
+    background-color: rgba(74, 74, 74, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #d8d8d8;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .nav-button {
+    background-color: #b1b1b1;
+    color: #040404;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .nav-button:hover {
+    background-color: #282742;
+  }
+  
+  
+  
