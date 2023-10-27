@@ -13,6 +13,7 @@ def index(request):
     return HttpResponse("Succes Login")
 
 
+
 class Login(APIView):
     serializer_class = ReactSerializer
 
@@ -36,4 +37,5 @@ class Register(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
+
 
