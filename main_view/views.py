@@ -25,7 +25,7 @@ class Login(APIView):
             user = authenticate(request, username=login, password=password)
             if user is not None:
                 token, _ = Token.objects.get_or_create(user=user)
-                return redirect('/success')
+                Response(serializer.data)
             else:
                 return Response({'error': 'Failed to login.'}, status=status.HTTP_400_BAD_REQUEST)
 
