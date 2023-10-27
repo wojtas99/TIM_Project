@@ -10,14 +10,13 @@ export const Register = (props) => {
 
     // Tworzymy obiekt z danymi do przesłania
     const data = {
-      method = 'register'
       login: login,
       password: password,
       email_address: email_address
     };
 
     // Wysyłamy dane za pomocą żądania AJAX
-    fetch("http://127.0.0.1:8000/", {
+    fetch("http://127.0.0.1:8000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
