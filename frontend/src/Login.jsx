@@ -1,70 +1,63 @@
-import React, {useState} from "react";
-import { useNavigate } from "react-router-dom";
-import { IoIosHome } from "react-icons/io";
-import "./Login.css"
+import React, { Component } from 'react';
 
-export const Login = (props) => {
-    const navigate = useNavigate();
-    const [login, setlogin] = useState('');
-    const [password, setpassword] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Tworzymy obiekt z danymi do przesłania
-    const data = {
-        login: login,
-        password: password,
-      };
-  
-      // Wysyłamy dane za pomocą żądania AJAX
-      fetch("http://127.0.0.1:8000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Logowanie udana!");
-            window.location.href = '/success'; 
-          } else {
-            alert("Błąd logowanie. Spróbuj ponownie.");
-          }
-        })
-        .catch((error) => {
-          console.error("Błąd: " + error);
-        });
+class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      loginError: '',
     };
-  
-    const navigateToStartPage = () => {
-      navigate("/");
-    };
-  
-    const refreshPage = () => {
-      window.location.reload();
-    };
+  }
 
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
+
+  handleLogin = () => {
+    // Wysłanie żądania POST z danymi logowania
+    fetch('/api/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.state),
+    })
+    .then(response => {
+      if (response.status === 200) {
+        // Zalogowano pomyślnie
+        console.log('Zalogowano pomyślnie');
+        // Tutaj możesz przekierować użytkownika lub wykonać inne działania
+      } else {
+        // Nieprawidłowe dane logowania
+        console.log('Nieprawidłowe dane logowania');
+        this.setState({ loginError: 'Nieprawidłowe dane logowania' });
+      }
+    })
+    .catch(error => {
+      console.error('Błąd podczas wysyłania żądania: ', error);
+      this.setState({ loginError: 'Błąd podczas wysyłania żądania' });
+    });
+  }
+
+  render() {
     return (
-        <div className="auth-form-container">
-            <form className="login-form" onSubmit={handleSubmit}>
-                <h1>Log In</h1>
-                <label htmlFor="login"> Login</label>
-                <input value={login} onChange={(e) => setlogin(e.target.value)} type="login" placeholder="Your Login" id="login" name="login"/>
-                <label htmlFor="password"> Password</label>
-                <input value={password} onChange={(e) => setpassword(e.target.value)} type="password" placeholder="*******" id="password" name="password" />
-                <button type="submit">Log In</button>
-
-                <button className="home-button" onClick={() => {
-                navigateToStartPage();
-                refreshPage();
-              }}>
-                <IoIosHome />
-              </button>
-            </form>
+      <div>
+        <h1>Logowanie</h1>
+        <div>
+          <label>Nazwa użytkownika:</label>
+          <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
         </div>
+        <div>
+          <label>Hasło:</label>
+          <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
+        </div>
+        <button onClick={this.handleLogin}>Zaloguj</button>
+        {this.state.loginError && <p>{this.state.loginError}</p>}
+      </div>
     );
-};
+  }
+}
 
 export default Login;
