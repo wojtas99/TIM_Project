@@ -5,20 +5,17 @@ from rest_framework.views import APIView
 from django.http import HttpResponse
 from .serializer import *
 
-
 def index(request):
     return HttpResponse("Succes Login")
 
 
 class Login(APIView):
     def post(self, request):
-        username = request.data.get('login')
+        login = request.data.get('login')
         password = request.data.get('password')
-
-        user = authenticate(username=username, password=password)
-        print(user)
-        if user is not None:
-            login(request, user)
+        user = User.objects.filter(login=login).first()
+        print(user.password)
+        if user and user.password == password:
             return Response({'message': 'Zalogowano pomyślnie'}, status=status.HTTP_200_OK)
         else:
             return Response({'message': 'Nieprawidłowe dane logowania'}, status=status.HTTP_401_UNAUTHORIZED)

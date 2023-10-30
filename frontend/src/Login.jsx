@@ -4,7 +4,7 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      login: '',
       password: '',
       loginError: '',
     };
@@ -17,7 +17,7 @@ class Login extends Component {
 
   handleLogin = () => {
     // Wysłanie żądania POST z danymi logowania
-    fetch('/api/login/', {
+    fetch('http://127.0.0.1:8000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ class Login extends Component {
         <h1>Logowanie</h1>
         <div>
           <label>Nazwa użytkownika:</label>
-          <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
+          <input type="text" name="login" value={this.state.username} onChange={this.handleInputChange} />
         </div>
         <div>
           <label>Hasło:</label>
