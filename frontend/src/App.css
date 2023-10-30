@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-image: url("C:\Projekt\react_register_form-main\back_v2.jpg");
+  background-image: url("C:\Projekt\TIM_Project\frontend\back_v2.jpg");
 }
 
 .auth-form-container, .login-form, .register-form{
