@@ -1,63 +1,93 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
+import { IoIosHome } from 'react-icons/io';
 
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      login: '',
-      password: '',
-      loginError: '',
-    };
-  }
+export const Login = () => {
+  const navigate = useNavigate();
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
 
-  handleInputChange = (event) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
+    if (name === 'login') {
+      setLogin(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
+  };
 
-  handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+
     // Wysłanie żądania POST z danymi logowania
     fetch('http://127.0.0.1:8000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(this.state),
+      body: JSON.stringify({ login, password }),
     })
-    .then(response => {
-      if (response.status === 200) {
-        // Zalogowano pomyślnie
-        console.log('Zalogowano pomyślnie');
-        // Tutaj możesz przekierować użytkownika lub wykonać inne działania
-      } else {
-        // Nieprawidłowe dane logowania
-        console.log('Nieprawidłowe dane logowania');
-        this.setState({ loginError: 'Nieprawidłowe dane logowania' });
-      }
-    })
-    .catch(error => {
-      console.error('Błąd podczas wysyłania żądania: ', error);
-      this.setState({ loginError: 'Błąd podczas wysyłania żądania' });
-    });
-  }
+      .then((response) => {
+        if (response.status === 200) {
+          alert('Zalogowano pomyślnie');
+          navigate('/dashboard');
+        } else {
+          alert('Nieprawidłowe dane logowania');
+          setLoginError('Nieprawidłowe dane logowania');
+        }
+      })
+      .catch((error) => {
+        console.error('Błąd podczas wysyłania żądania: ', error);
+        setLoginError('Błąd podczas wysyłania żądania');
+      });
+  };
 
-  render() {
-    return (
-      <div>
-        <h1>Logowanie</h1>
-        <div>
-          <label>Nazwa użytkownika:</label>
-          <input type="text" name="login" value={this.state.username} onChange={this.handleInputChange} />
-        </div>
-        <div>
-          <label>Hasło:</label>
-          <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
-        </div>
-        <button onClick={this.handleLogin}>Zaloguj</button>
-        {this.state.loginError && <p>{this.state.loginError}</p>}
-      </div>
-    );
-  }
-}
+
+  const navigateToStartPage = () => {
+    navigate("/");
+  };
+
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
+
+  return (
+    <div className="auth-form-container">
+      <form className="login-form" onSubmit={handleLogin}>
+        <h1>Log In</h1>
+        <label htmlFor="login">Login:</label>
+        <input
+          type="text"
+          name="login"
+          value={login}
+          onChange={handleInputChange}
+          placeholder="Your Login"
+          id="login"
+        />
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleInputChange}
+          placeholder="*******"
+          id="password"
+        />
+        <button type="submit">Submit</button>
+        {loginError && <p>{loginError}</p>}
+        <button className="home-button" onClick={() => {
+          navigateToStartPage();
+          refreshPage();
+          
+        }}>
+          <IoIosHome />
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default Login;
