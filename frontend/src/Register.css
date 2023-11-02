@@ -1,4 +1,16 @@
 /* Register.css */
+.main-page {
+  background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
 .auth-form-container, .login-form, .register-form {
     display: flex;
     flex-direction: column;

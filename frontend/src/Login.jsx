@@ -55,37 +55,39 @@ export const Login = () => {
 
 
   return (
-    <div className="auth-form-container">
-      <form className="login-form" onSubmit={handleLogin}>
-        <h1>Log In</h1>
-        <label htmlFor="login">Login:</label>
-        <input
-          type="text"
-          name="login"
-          value={login}
-          onChange={handleInputChange}
-          placeholder="Your Login"
-          id="login"
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-          placeholder="*******"
-          id="password"
-        />
-        <button type="submit">Submit</button>
-        {loginError && <p>{loginError}</p>}
-        <button className="home-button" onClick={() => {
-          navigateToStartPage();
-          refreshPage();
-          
-        }}>
-          <IoIosHome />
-        </button>
-      </form>
+    <div className="main-page">
+      <div className="auth-form-container">
+        <form className="login-form" onSubmit={handleLogin}>
+          <h1>Log In</h1>
+          <label htmlFor="login">Login:</label>
+          <input
+            type="text"
+            name="login"
+            value={login}
+            onChange={handleInputChange}
+            placeholder="Your Login"
+            id="login"
+          />
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+            placeholder="*******"
+            id="password"
+          />
+          <button type="submit">Submit</button>
+          {loginError && <p>{loginError}</p>}
+          <button className="home-button" onClick={() => {
+            navigateToStartPage();
+            refreshPage();
+            
+          }}>
+            <IoIosHome />
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

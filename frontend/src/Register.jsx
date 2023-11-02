@@ -49,24 +49,26 @@ export const Register = () => {
 
 
   return (
-    <div className="auth-form-container">
-       <form className="register-form" onSubmit={handleSubmit}>
-        <h1>Register</h1>
-        <label htmlFor="login">Login</label>
-        <input value={login} onChange={(e) => setLogin(e.target.value)} type="text" placeholder="Your Login" id="login" name="login" />
-        <label htmlFor="password">Password</label>
-        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="*******" id="password" name="password" />
-        <label htmlFor="email">Email</label>
-        <input value={email_address} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your.email@com.pl" id="email" name="email" />
-        <button type="submit">Register</button>
-        
-        <button className="home-button" onClick={() => {
-          navigateToStartPage();
-          refreshPage();
-        }}>
-          <IoIosHome />
-        </button>
-      </form>
+    <div className="main-page">
+      <div className="auth-form-container">
+        <form className="register-form" onSubmit={handleSubmit}>
+          <h1>Register</h1>
+          <label htmlFor="login">Login</label>
+          <input value={login} onChange={(e) => setLogin(e.target.value)} type="text" placeholder="Your Login" id="login" name="login" />
+          <label htmlFor="password">Password</label>
+          <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="*******" id="password" name="password" />
+          <label htmlFor="email">Email</label>
+          <input value={email_address} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your.email@com.pl" id="email" name="email" />
+          <button type="submit">Register</button>
+          
+          <button className="home-button" onClick={() => {
+            navigateToStartPage();
+            refreshPage();
+          }}>
+            <IoIosHome />
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

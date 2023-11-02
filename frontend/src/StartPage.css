@@ -5,7 +5,7 @@
     box-sizing: border-box;
   }
   
-  body {
+  .main-page {
     background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
     background-size: cover;
     font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
     flex-direction: column;
   }
   
-  .main-page {
+  .content-container {
     background-color: rgba(74, 74, 74, 0.7);
     padding: 20px;
     text-align: center;
