@@ -1,0 +1,5 @@
+.dashboard-container {
+  padding: 20px;
+  background: #7b7a7a; /* Tło dashboardu, możesz dostosować kolor */
+  text-align: center;
+}

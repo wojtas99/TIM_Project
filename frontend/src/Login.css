@@ -1,18 +1,35 @@
 /* Login.css */
-.auth-form-container, .login-form, .register-form {
+
+.main-page {
+  background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.auth-form-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Dodaj obramowanie do kontenera */
+    border-radius: 10px;
+    padding: 1rem;;
+    background-color: rgba(71, 70, 70, 0.7); /* Kolor tła z 70% przezroczystości */
+    margin: 10px;
   }
   
   .login-form {
-    padding: 5rem;
+    padding: 3rem;
     border-radius: 10px;
-    margin: 0;
   }
   
   label {
     text-align: left;
     padding: 0.25rem 0;
+    margin: 5px;
   }
   
   input {
