@@ -47,3 +47,9 @@
     cursor: pointer;
   }
   
+  button:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255); /* Nowy kolor tekstu po najechaniu */
+    background-color: rgba(33, 33, 33, 0.8); /* Nowy kolor tła po najechaniu */
+    transition: background-color 0.3s, color 0.3s; /* Dodaj transition */
+  }

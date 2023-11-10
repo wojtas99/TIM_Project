@@ -1,18 +1,29 @@
 import React from "react";
-import "./TopBar.css"; // Importuj stylizację
-import { VscAccount } from "react-icons/vsc";
+import "./TopBar.css";
+import { VscAccount, VscGear } from "react-icons/vsc";
+import { useNavigate } from 'react-router-dom';
 
 function TopBar() {
+  const navigate = useNavigate();
+  const handleNavigation = (destination) => {
+    navigate(destination);
+  };
+
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">Dashboard</span>
+          <button2 className="logo" onClick={() => handleNavigation('/dashboard')}>
+            Dashboard
+          </button2>
         </div>
         <div className="topRight">
-          <div className="topbarIconContainer">
+        <div className="topbarIconSet">
+            <VscGear />
+          </div>          
+          <button2 className="topbarIconAcc" onClick={() => handleNavigation('/profile')}>
             <VscAccount />
-          </div>
+          </button2>
         </div>
       </div>
     </div>

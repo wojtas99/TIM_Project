@@ -1,7 +1,7 @@
 .topbar {
   width: 100%;
   height: 50px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   position: sticky;
   top: 0;
   z-index: 999;
@@ -15,7 +15,15 @@
   justify-content: space-between;
 }
 
-.topbarIconContainer {
+.topbarIconAcc {
+  font-size: 30px;
+  color: #555;
+  position: relative;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.topbarIconSet {
   font-size: 30px;
   color: #555;
   position: relative;
@@ -37,3 +45,15 @@
 
 
 
+button2 {
+  background-color: transparent;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+button2:hover {
+  background-color: darkblue;
+  cursor: pointer;
+  color: rgb(255, 255, 255); /* Nowy kolor tekstu po najechaniu */
+  transition: 0.3s;
+}
