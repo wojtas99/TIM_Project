@@ -1,0 +1,65 @@
+.groups-menu {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: darkblue;
+    margin: 10px;
+    color: white;
+    display: inline-block; /* Zmień display na inline-block */
+    position: relative; /* Usuń position: relative */
+  }
+  
+  .groups-title {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .options {
+    border-radius: 10px;
+    background-color: rgba(57, 57, 57, 0.7);
+    margin: 0; /* Usuń margines, aby pozbyć się pustego miejsca */
+    position: absolute;
+    top: 100%; /* Ustaw top na 100% */
+    left: 0;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    width: 170px;
+  }
+  
+  .groups-menu:hover .options {
+    display: block;
+    background-color: rgba(57, 57, 57, 0.7);
+  }
+  
+  .option {
+    cursor: pointer;
+    color: white;
+    padding: 10px; /* Dodaj padding na górze i na dole */
+    background: none;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.2s; /* Dodaj płynność przy najechaniu */
+    position: relative; /* Ustalamy pozycję na relatywną */
+  }
+  
+  .option::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Wysokość linii separatora */
+    background-color: white;
+    margin-top: 2px; /* Dodaj margines na górze separatora */
+    margin-bottom: 2px; /* Dodaj margines na dole separatora */
+  }
+  
+  .option:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255); /* Nowy kolor tekstu po najechaniu */
+    background-color: rgba(255, 255, 255, 0.329); /* Nowy kolor tła po najechaniu */
+  }
+  
+

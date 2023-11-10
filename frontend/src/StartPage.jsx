@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './StartPage.css';
 
 function StartPage() {
   const [isContentVisible, setContentVisibility] = useState(true);
   const navigate = useNavigate();
+  const [isAnimated, setIsAnimated] = useState(false);
+  
+
+  useEffect(() => {
+    // Po montażu komponentu, po kilku sekundach uruchom animację
+    setTimeout(() => {
+      setIsAnimated(true);
+    }, 500); // Opóźnienie 1s (1000ms)
+  }, []);
 
   const handleNavigation = (destination) => {
     setContentVisibility(false);
@@ -13,7 +22,7 @@ function StartPage() {
 
   return (
     <div className="main-page">
-      <div className="content-container">
+      <div className={`content-container ${isAnimated ? "animate" : ""}`}>
         {isContentVisible && (
           <>
             <h1>Welcome to Our Website</h1>
