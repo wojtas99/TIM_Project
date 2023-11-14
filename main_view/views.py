@@ -13,7 +13,6 @@ class Login(APIView):
         login = request.data.get('login')
         password = request.data.get('password')
         user = User.objects.filter(login=login).first()
-        print(user.password)
         if user and user.password == password:
             return Response({'message': 'Zalogowano pomyślnie'}, status=status.HTTP_200_OK)
         else:
@@ -27,5 +26,8 @@ class Register(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
+
+
+
 
 
