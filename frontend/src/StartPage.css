@@ -5,7 +5,7 @@
     box-sizing: border-box;
   }
   
-  body {
+  .main-page {
     background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
     background-size: cover;
     font-family: Arial, sans-serif;
@@ -17,14 +17,27 @@
     flex-direction: column;
   }
   
-  .main-page {
+  .content-container {
     background-color: rgba(74, 74, 74, 0.7);
     padding: 20px;
     text-align: center;
     border-radius: 10px;
     margin-bottom: 20px;
+    transform: translateY(-800px);
+    transition: opacity 0.3s, transform 0.3s; /* Animacja zmiany przezroczystości i transformacji */
   }
   
+  @keyframes slideInFromRight {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Przesuń na widoczny obszar */
+    }
+  }
+
+  .content-container.animate {
+    animation: slideInFromRight 0.8s ease forwards; /* Opóźnienie 1s */
+  }
+
   h1 {
     font-size: 36px;
     color: #fff;
@@ -44,19 +57,19 @@
   
   .nav-button {
     background-color: #b1b1b1;
-    color: #040404;
+    color: #ffffff;
     border: none;
     padding: 15px 30px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 18px;
     margin: 0 10px;
-    text-decoration: none;
+    text-decoration: solid;
   }
-  
+
   .nav-button:hover {
-    background-color: #282742;
+    cursor: pointer;
+    color: rgb(255, 255, 255); /* Nowy kolor tekstu po najechaniu */
+    background-color: rgba(33, 33, 33, 0.8); /* Nowy kolor tła po najechaniu */
   }
-  
-  
   

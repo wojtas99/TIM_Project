@@ -1,0 +1,91 @@
+/* Creategroup.css */
+.create-page {
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #959595;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.create-group-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem; /* Zmniejszenie wewnętrznego odstępu */
+  border-radius: 10px;
+  border: 2px solid #1b21c3; /* Zmiana koloru ramki */
+  background-color: rgba(81, 81, 81, 0.7);
+  max-width: 400px; /* Ograniczenie szerokości formularza */
+  width: 100%;
+  text-align: center; /* Wyśrodkowanie tekstu w formularzu */
+}
+
+
+.create-group-form input[type="text"],
+.create-group-form input[type="number"],
+.create-group-form input[type="date"],
+.create-group-form input[type="time"],
+.create-group-form select {
+  padding: 10px;
+  margin: 5px 0; /* Zmniejszenie odstępu między polami */
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: white;
+  color: #1b21c3;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+}
+
+.create-group-form button {
+  background-color: #1b21c3;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+
+.create-group-form button:hover {
+  background-color: darkblue;
+}
+
+.selectoption select {
+  padding: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: white;
+  color: #1b21c3;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+}
+
+.selectoption select:focus {
+  outline: none;
+}
+
+.selectoption select::-ms-expand,
+.selectoption select::-ms-value {
+  display: none;
+}
+
+.selectoption select::before {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.selectoption select:hover {
+  border-color: #1b21c3;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
