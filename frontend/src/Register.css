@@ -1,6 +1,6 @@
 /* Register.css */
 .main-page {
-  background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
+  background-image: url("C:\ProjektyGit\TIM_Project\back_v2.jpg");
   background-size: cover;
   font-family: Arial, sans-serif;
   color: white;
@@ -15,25 +15,25 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .register-form {
     padding: 5rem;
     border-radius: 10px;
     margin: 0;
   }
-  
+
   label {
     text-align: left;
     padding: 0.25rem 0;
   }
-  
+
   input {
     margin: 0.5rem 0;
     padding: 1rem;
     border: none;
     border-radius: 10px;
   }
-  
+
   button {
     border: none;
     background-color: rgb(201, 200, 200);
@@ -41,7 +41,7 @@
     border-radius: 10px;
     cursor: pointer;
   }
-  
+
 
   .home-button {
     position: fixed;

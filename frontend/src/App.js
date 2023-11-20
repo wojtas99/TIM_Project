@@ -6,7 +6,6 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 import Creategroup from "./Creategroup";
 import Profile from "./Profile";
-
 function App() {
   const [isContentVisible, setIsContentVisible] = useState(true);
 
@@ -22,7 +21,7 @@ function App() {
           element={<Login isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
         />
         <Route
-          path="/register"
+          path="/signup"
           element={<Register isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
         />
         <Route
