@@ -1,6 +1,6 @@
 /* Register.css */
 .main-page {
-  background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
+  background-color: aqua;
   background-size: cover;
   font-family: Arial, sans-serif;
   color: white;
@@ -10,6 +10,28 @@
   height: 100vh;
   flex-direction: column;
 }
+.auth-form-container{
+  display: flex;
+  flex-direction: column; /* Dodaj obramowanie do kontenera */
+  border-radius: 10px;
+  padding: 1rem;;
+  background-color: rgba(71, 70, 70, 0.7); /* Kolor tła z 70% przezroczystości */
+  margin: 10px;
+  transform: translateY(-800px);
+  transition: opacity 0.3s, transform 0.3s; /* Animacja zmiany przezroczystości i transformacji */
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Przesuń na widoczny obszar */
+  }
+}
+
+.auth-form-container.animate {
+  animation: slideInFromRight 0.8s ease forwards; /* Opóźnienie 1s */
+}
+
 
 .auth-form-container, .login-form, .register-form {
     display: flex;
