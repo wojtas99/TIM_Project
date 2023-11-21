@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Profile.css";
 import TopBar from "./TopBar"; 
-
+import { useNavigate } from 'react-router-dom';
 function Profile() {
+    const navigate = useNavigate();
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [email_address, setEmail] = useState("");
@@ -40,7 +41,10 @@ function Profile() {
         console.error("Błąd: " + error);
       });
   };
-
+    const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    navigate('/login');
+  };
 
   return (
     <div className="topbar">
@@ -58,8 +62,8 @@ function Profile() {
           <input value={fname} onChange={(e) => setFname(e.target.value)} type="text" placeholder="First Name" id="fname" name="fname" />
           <label htmlFor="email">Last Name</label>
           <input value={lname} onChange={(e) => setLname(e.target.value)} type="text" placeholder="Last Name" id="lname" name="lname" />
-          
           <button type="submit">Submit Changes</button>
+          <button onClick={handleLogout}>Logout</button>
         </form>
       </div>
     </div>

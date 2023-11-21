@@ -31,7 +31,7 @@ function StartPage() {
               <button className="nav-button" onClick={() => handleNavigation('/login')}>
                 Login
               </button>
-              <button className="nav-button" onClick={() => handleNavigation('/register')}>
+              <button className="nav-button" onClick={() => handleNavigation('/signup')}>
                 Register
               </button>
             </div>

@@ -6,7 +6,7 @@
   }
   
   .main-page {
-    background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
+    background-image: url("C:\Users\blazz\Desktop\TIM_Project\back_v2.jpg");
     background-size: cover;
     font-family: Arial, sans-serif;
     color: white;
@@ -27,7 +27,7 @@
     transition: opacity 0.3s, transform 0.3s; /* Animacja zmiany przezroczystości i transformacji */
   }
   
-  @keyframes slideInFromRight {
+  @keyframes slideInFromTop {
     to {
       opacity: 1;
       transform: translateY(0); /* Przesuń na widoczny obszar */
@@ -35,7 +35,7 @@
   }
 
   .content-container.animate {
-    animation: slideInFromRight 0.8s ease forwards; /* Opóźnienie 1s */
+    animation: slideInFromTop 0.8s ease forwards; /* Opóźnienie 1s */
   }
 
   h1 {
