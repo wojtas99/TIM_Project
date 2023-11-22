@@ -1,0 +1,29 @@
+.sidebarDashboard
+{
+height: 100%;
+width: 160px;
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgb(0, 0, 0) ;
+}
+.sidebarDashboard dLabel {
+text-decoration: none;
+font-size: 50px;
+color: rgb(255, 255, 255);
+display: block;
+}
+.sidebarDashboard dLabel:hover {
+cursor: pointer;
+color: rgb(0, 200, 0);
+}
+.sidebarDashboard dButton {
+text-decoration: none;
+font-size: 50px;
+color: rgb(255, 255, 255);
+display: block;
+}
+.sidebarDashboard dButton:hover {
+cursor: pointer;
+color: rgb(0, 200, 0);
+}

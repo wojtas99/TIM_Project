@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import './App.css';
 import "./Dashboard.css";
 const Dashboard = () => {
 const navigate = useNavigate();
@@ -7,7 +8,7 @@ const [user, setUser] = useState(null);
 
      useEffect(() => {
       fetchUser();
-  }, [user]);
+  }, []);
 
   const fetchUser = async () => {
       try {
@@ -31,8 +32,16 @@ const [user, setUser] = useState(null);
       } catch (err) {
         console.error(err);
         navigate('/login');}}
+  const handleLogout = () => {
+        localStorage.removeItem('authToken');
+        navigate('/login');};
         return (
-            <div className="main-page"></div>
+         <div className="main-page">
+         <div className="sidebarDashboard">
+              <dLabel>Hej</dLabel>
+               <dButton onClick={handleLogout}>Logout</dButton>
+            </div>
+            </div>
             );
 };
 export default Dashboard;
