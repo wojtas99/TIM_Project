@@ -1,14 +1,5 @@
 /* Creategroup.css */
-.create-page {
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  background-color: #959595;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
 
 .create-group-form {
   display: flex;
@@ -23,7 +14,6 @@
 }
 
 
-.create-group-form input[type="text"],
 .create-group-form input[type="number"],
 .create-group-form input[type="date"],
 .create-group-form input[type="time"],

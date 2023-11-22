@@ -1,73 +1,31 @@
-/* Register.css */
-.main-page {
-  background-image: url("C:\Users\blazz\Desktop\TIM_Project\back_v2.jpg");
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
+labelRegister
+{
+text-align: left;
+font-size: 30px;
 }
-.auth-form-container{
-  display: flex;
-  flex-direction: column; /* Dodaj obramowanie do kontenera */
-  border-radius: 10px;
-  padding: 1rem;;
-  background-color: rgba(71, 70, 70, 0.7); /* Kolor tła z 70% przezroczystości */
-  margin: 10px;
-  transform: translateY(-800px);
-  transition: opacity 0.3s, transform 0.3s; /* Animacja zmiany przezroczystości i transformacji */
+buttonRegister
+{
+background-color: rgb(201, 200, 200) ;
+color: rgb(0, 0, 0);
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+cursor: pointer;
 }
-
-@keyframes slideInFromRight {
-  to {
-    opacity: 1;
-    transform: translateY(0); /* Przesuń na widoczny obszar */
-  }
+buttonRegister:hover
+{
+background-color: rgba(0, 0, 0);
+color: rgb(0, 255, 0);
+transition: background-color 1s, color 0.3s;
 }
-
-.auth-form-container.animate {
-  animation: slideInFromRight 0.8s ease forwards; /* Opóźnienie 1s */
+input
+{
+margin: 0.5rem 0;
+padding: 1rem;
+border: none;
+border-radius: 10px;
+border: 1px solid #ccc;
+font-size: 16px;
 }
 
 
-.auth-form-container, .login-form, .register-form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .register-form {
-    padding: 5rem;
-    border-radius: 10px;
-    margin: 0;
-  }
-
-  label {
-    text-align: left;
-    padding: 0.25rem 0;
-  }
-
-  input {
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-  }
-
-  button {
-    border: none;
-    background-color: rgb(201, 200, 200);
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-
-  .home-button {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    font-size: 24px; /* Zwiększ rozmiar przycisku */
-  }

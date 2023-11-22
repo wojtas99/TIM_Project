@@ -1,54 +1,51 @@
-.App {
-  text-align: center;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-image: url("C:\Users\blazz\Desktop\TIM_Project\back_v2.jpg");
-}
+  .main-page {
+    background-image: url("C:\Users\blazz\Desktop\TIM_Project\back_v2.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
 
-.auth-form-container, .login-form, .register-form{
+homeButton
+{
+background-color: rgb(201, 200, 200) ;
+color: rgb(0, 0, 0);
+padding: 20px;
+border-radius: 10px;
+cursor: pointer;
+position: fixed;
+bottom: 10px;
+left: 10px;
+font-size: 24px;
+}
+homeButton:hover
+{
+background-color: rgba(0, 0, 0);
+color: rgb(0, 255, 0);
+transition: background-color 1s, color 0.3s;
+}
+.auth-form-container
+{
   display: flex;
   flex-direction: column;
-}
-
-.login-form{
-  padding: 5rem;
   border-radius: 10px;
-  margin: 0;
-  background-color: rgba(74, 74, 74, 0.7);
-}
-
-.register-form{
-  padding: 5rem;
-  border-radius: 10px;
-  margin: 0;
-  background-color: rgba(74, 74, 74, 0.7);
-}
-
-.auth-form-container{
-  padding: 5rem;
-  border-radius: 10px;
-  margin: 0;
-}
-
-label {
-  text-align: left;
-  padding: 0.25rem 0;
-}
-
-input{
-  margin: 0.5rem 0;
   padding: 1rem;
-  border: none;
-  border-radius: 10px;
+  background-color: rgba(71, 70, 70, 0.7);
+  transform: translateY(-800px);
+}
+.auth-form-container.animate
+{
+  animation: slideInFromRight 1.5s ease forwards; /* Opóźnienie 1s */
 }
 
-button{
-  border: none;
-  background-color: rgb(201, 200, 200) ;
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+

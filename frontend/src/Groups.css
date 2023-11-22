@@ -1,14 +1,4 @@
-.groups-menu {
-    position: relative;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: darkblue;
-    margin: 10px;
-    color: white;
-    display: inline-block; /* Zmień display na inline-block */
-    position: relative; /* Usuń position: relative */
-  }
+
   
   .groups-title {
     cursor: pointer;

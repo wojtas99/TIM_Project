@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './Register.css';
 import { IoIosHome } from "react-icons/io";
+import './Register.css';
+import './App.css';
+
 const SignUp = () => {
 const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -12,10 +14,7 @@ const navigate = useNavigate();
   
 
   useEffect(() => {
-    // Po montażu komponentu, po kilku sekundach uruchom animację
-    setTimeout(() => {
       setIsAnimated(true);
-    }, 500); // Opóźnienie 1s (1000ms)
   }, []);
   const handleSignUp = async () => {
     try {
@@ -57,16 +56,10 @@ const navigate = useNavigate();
   };
 
 
-  const refreshPage = () => {
-    window.location.reload();
-  };
-
-
  return (
     <div className="main-page">
         <div className={`auth-form-container ${isAnimated ? "animate" : ""}`}>
-        <form className="register-form"></form>
-        <h2>Sign Up</h2>
+        <labelRegister>Sign Up</labelRegister>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -91,15 +84,14 @@ const navigate = useNavigate();
           onChange={(e) => setPassword(e.target.value)}
           id="password"
         />
-        <button onClick={handleSignUp}>Sign Up</button>
+        <buttonRegister onClick={handleSignUp}>Sign Up</buttonRegister>
       </div>
-      <div className={`button-animated ${isAnimated ? "animate" : ""}`}>
-        <button className="home-button" onClick={() => {
+       <div className={`button-animated ${isAnimated ? "animate" : ""}`}>
+        <homeButton className="home-button" onClick={() => {
               navigateToStartPage();
-              refreshPage();
             }}>
-            <IoIosHome />
-        </button>
+              <IoIosHome />
+              </homeButton>
       </div>
     </div>
   );

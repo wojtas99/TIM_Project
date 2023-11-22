@@ -1,100 +1,29 @@
-/* Login.css */
-
-.main-page {
-  background-image: url("C:\Users\blazz\Desktop\TIM_Project\back_v2.jpg");
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
+labelLogin
+{
+text-align: left;
+font-size: 30px;
 }
-
-.auth-form-container{
-  position: absolute;
-    display: flex;
-    flex-direction: column; /* Dodaj obramowanie do kontenera */
-    border-radius: 10px;
-    padding: 1rem;;
-    background-color: rgba(71, 70, 70, 0.7); /* Kolor tła z 70% przezroczystości */
-    margin: 0;
-    transform: translateY(-800px);
-    transition: opacity 0.3s, transform 0.3s; /* Animacja zmiany przezroczystości i transformacji */
-  }
-  
-  @keyframes slideInFromTop {
-    to {
-      opacity: 1;
-      transform: translateY(0); /* Przesuń na widoczny obszar */
-    }
-  }
-
-  .auth-form-container.animate {
-    animation: slideInFromTop 0.8s ease forwards; /* Opóźnienie 1s */
-  }
-
-  .login-form {
-    padding: 3rem;
-    border-radius: 10px;
-  }
-  
-  label {
-    text-align: left;
-    padding: 0.25rem 0;
-    margin: 5px;
-  }
-  
-  input {
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-  }
-  
-  button {
-    border: none;
-    background-color: rgb(201, 200, 200);
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    cursor: pointer;
-    color: rgb(255, 255, 255); /* Nowy kolor tekstu po najechaniu */
-    background-color: rgba(33, 33, 33, 0.8); /* Nowy kolor tła po najechaniu */
-    transition: background-color 0.3s, color 0.3s; /* Dodaj transition */
-  }
-
-
-  @keyframes slideInFromDown {
-    to {
-      opacity: 1;
-      transform: translateY(0); /* Przesuń na widoczny obszar */
-    }
-  }
-
-  .button-animated.animate {
-    animation: slideInFromDown 0.8s ease forwards; /* Opóźnienie 1s */
-  }
-
-  .button-animated {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border: none;
-    cursor: pointer;
-    transform: translateY(400px);
-    transition: opacity 0.3s, transform 0.3s; /* Animacja zmiany przezroczystości i transformacji */
-  }
-  
-  .button-animated:hover {
-    cursor: pointer;
-    color: rgb(255, 255, 255); /* Nowy kolor tekstu po najechaniu */
-    background-color: rgba(33, 33, 33, 0.8); /* Nowy kolor tła po najechaniu */
-    transition: background-color 0.3s, color 0.3s; /* Dodaj transition */
-  }
+buttonLogin
+{
+background-color: rgb(201, 200, 200) ;
+color: rgb(0, 0, 0);
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+cursor: pointer;
+}
+buttonLogin:hover
+{
+background-color: rgba(0, 0, 0);
+color: rgb(0, 255, 0);
+transition: background-color 1s, color 0.3s;
+}
+input
+{
+margin: 0.5rem 0;
+padding: 1rem;
+border: none;
+border-radius: 10px;
+border: 1px solid #ccc;
+font-size: 16px;
+}

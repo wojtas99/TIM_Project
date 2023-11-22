@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
 import { IoIosHome } from "react-icons/io";
+import './Login.css';
+import './App.css';
 const Login = () => {
 const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [isAnimated, setIsAnimated] = useState(false);
-  const [setError] = useState('');
+const [username, setUsername] = useState('');
+const [password, setPassword] = useState('');
+const [isAnimated, setIsAnimated] = useState(false);
+const [setError] = useState('');
 
   useEffect(() => {
-    // Po montażu komponentu, po kilku sekundach uruchom animację
-    setTimeout(() => {
       setIsAnimated(true);
-    }, 500); // Opóźnienie 1s (1000ms)
   }, []);
 
   const handleLogin = async () => {
@@ -46,16 +44,10 @@ const navigate = useNavigate();
  const navigateToStartPage = () => {
     navigate("/");
   };
-
-
-  const refreshPage = () => {
-    window.location.reload();
-  };
  return (
     <div className="main-page">
       <div className={`auth-form-container ${isAnimated ? "animate" : ""}`}>
-        <form className="login-form"/>
-          <h2>Login</h2>
+          <labelLogin>Login</labelLogin>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -72,18 +64,16 @@ const navigate = useNavigate();
           onChange={(e) => setPassword(e.target.value)}
           id="password"
         />
-        <button onClick={handleLogin}>Login</button>
+        <buttonLogin onClick={handleLogin}>Login</buttonLogin>
       </div>
       <div className={`button-animated ${isAnimated ? "animate" : ""}`}>
-        <button className="home-button" onClick={() => {
+        <homeButton className="home-button" onClick={() => {
               navigateToStartPage();
-              refreshPage();
-              
             }}>
               <IoIosHome />
-            </button>
+              </homeButton>
       </div>
-    </div>
+      </div>
   );
 };
 
