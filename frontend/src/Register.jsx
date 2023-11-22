@@ -58,7 +58,7 @@ const navigate = useNavigate();
 
  return (
     <div className="main-page">
-        <div className={`auth-form-container ${isAnimated ? "animate" : ""}`}>
+        <div className={`auth-form-Register ${isAnimated ? "animate" : ""}`}>
         <labelRegister>Sign Up</labelRegister>
         <label htmlFor="username">Username:</label>
         <input
@@ -86,12 +86,8 @@ const navigate = useNavigate();
         />
         <buttonRegister onClick={handleSignUp}>Sign Up</buttonRegister>
       </div>
-       <div className={`button-animated ${isAnimated ? "animate" : ""}`}>
-        <homeButton className="home-button" onClick={() => {
-              navigateToStartPage();
-            }}>
-              <IoIosHome />
-              </homeButton>
+            <div className={`auth-form-container-button ${isAnimated ? "animate" : ""}`}>
+       <IoIosHome onClick={navigateToStartPage} />
       </div>
     </div>
   );

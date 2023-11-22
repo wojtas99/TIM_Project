@@ -2,19 +2,74 @@ labelStartPage
 {
 text-align: center;
 font-size: 25px;
+padding: 5px;
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+white-space: pre-wrap;
+word-wrap: break-word;
 }
-buttonStartPage
+buttonStartPageLogin
 {
 background-color: rgb(201, 200, 200) ;
 color: rgb(0, 0, 0);
 padding: 20px;
+width: 150px;
+height: 20px;
 border-radius: 10px;
 text-align: center;
 cursor: pointer;
+position: fixed;
+bottom: 80px;
+right: 150px;
 }
-buttonStartPage:hover
+buttonStartPageLogin:hover
 {
 background-color: rgba(0, 0, 0);
 color: rgb(0, 255, 0);
 transition: background-color 1s, color 0.3s;
+}
+buttonStartPageRegister
+{
+background-color: rgb(201, 200, 200) ;
+color: rgb(0, 0, 0);
+padding: 20px;
+width: 150px;
+height: 20px;
+border-radius: 10px;
+text-align: center;
+cursor: pointer;
+position: fixed;
+bottom: 10px;
+right: 150px;
+}
+buttonStartPageRegister:hover
+{
+background-color: rgba(0, 0, 0);
+color: rgb(0, 255, 0);
+transition: background-color 1s, color 0.3s;
+}
+.auth-form-StartPage
+{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 2rem;
+  opacity: 0;
+  padding-bottom: 10rem;
+  background-color: rgba(71, 70, 70, 0.7);
+}
+.auth-form-StartPage.animate
+{
+  animation: slideInFromRight 1.5s ease forwards;
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(10);
+    opacity: 1;
+  }
 }

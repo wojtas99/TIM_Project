@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IoIosHome } from "react-icons/io";
 import './Login.css';
 import './App.css';
+import { IoIosHome } from "react-icons/io";
 const Login = () => {
 const navigate = useNavigate();
 const [username, setUsername] = useState('');
@@ -46,7 +46,7 @@ const [setError] = useState('');
   };
  return (
     <div className="main-page">
-      <div className={`auth-form-container ${isAnimated ? "animate" : ""}`}>
+      <div className={`auth-form-Login ${isAnimated ? "animate" : ""}`}>
           <labelLogin>Login</labelLogin>
         <label htmlFor="username">Username:</label>
         <input
@@ -65,13 +65,9 @@ const [setError] = useState('');
           id="password"
         />
         <buttonLogin onClick={handleLogin}>Login</buttonLogin>
-      </div>
-      <div className={`button-animated ${isAnimated ? "animate" : ""}`}>
-        <homeButton className="home-button" onClick={() => {
-              navigateToStartPage();
-            }}>
-              <IoIosHome />
-              </homeButton>
+        </div>
+            <div className={`auth-form-container-button ${isAnimated ? "animate" : ""}`}>
+       <IoIosHome onClick={navigateToStartPage} />
       </div>
       </div>
   );

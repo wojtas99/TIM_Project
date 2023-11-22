@@ -27,3 +27,26 @@ border-radius: 10px;
 border: 1px solid #ccc;
 font-size: 16px;
 }
+.auth-form-Login
+{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1rem;
+  opacity: 0;
+  background-color: rgba(71, 70, 70, 0.7);
+}
+.auth-form-Login.animate
+{
+  animation: slideInFromRight 1.5s ease forwards;
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(10);
+    opacity: 1;
+  }
+}

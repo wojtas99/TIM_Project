@@ -1,17 +1,6 @@
 /* Creategroup.css */
 
 
-.create-group-form {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem; /* Zmniejszenie wewnętrznego odstępu */
-  border-radius: 10px;
-  border: 2px solid #1b21c3; /* Zmiana koloru ramki */
-  background-color: rgba(81, 81, 81, 0.7);
-  max-width: 400px; /* Ograniczenie szerokości formularza */
-  width: 100%;
-  text-align: center; /* Wyśrodkowanie tekstu w formularzu */
-}
 
 
 .create-group-form input[type="number"],
