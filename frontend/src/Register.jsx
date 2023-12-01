@@ -16,6 +16,7 @@ const navigate = useNavigate();
   useEffect(() => {
       setIsAnimated(true);
   }, []);
+  
   const handleSignUp = async () => {
     try {
       const response = await fetch('http://localhost:8000/signup', {

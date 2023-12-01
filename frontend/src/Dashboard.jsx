@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './App.css';
 import "./Dashboard.css";
+import Groups from "./Groups";
+import TopBar from "./TopBar";
+
 const Dashboard = () => {
 const navigate = useNavigate();
 const [user, setUser] = useState(null);
@@ -35,13 +38,15 @@ const [user, setUser] = useState(null);
   const handleLogout = () => {
         localStorage.removeItem('authToken');
         navigate('/login');};
+
+
         return (
-         <div className="main-page">
-         <div className="sidebarDashboard">
-              <dLabel>Hej</dLabel>
-               <dButton onClick={handleLogout}>Logout</dButton>
+          <div className="dashboard-page">
+            <TopBar></TopBar>
+            <div className="managing-groups">
+              <Groups></Groups>   
             </div>
-            </div>
+          </div>
             );
 };
 export default Dashboard;

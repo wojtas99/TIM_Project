@@ -1,70 +1,52 @@
-/* Creategroup.css */
+.create-group-form {
+  background-color: rgba(71, 70, 70, 0.7);
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+  font-size: larger;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 3rem;
+}
 
+createheader {
+  font-size: 1.5rem;
+}
 
+.selectoption {
+  margin-bottom: 20px;
+  padding-top: 2rem;
 
+}
 
-.create-group-form input[type="number"],
-.create-group-form input[type="date"],
-.create-group-form input[type="time"],
+.create-group-form input,
 .create-group-form select {
-  padding: 10px;
-  margin: 5px 0; /* Zmniejszenie odstępu między polami */
-  border: 2px solid #ffffff;
-  border-radius: 5px;
-  background-color: white;
-  color: #1b21c3;
-  font-size: 16px;
   width: 100%;
-  cursor: pointer;
-  appearance: none;
-}
-
-.create-group-form button {
-  background-color: #1b21c3;
-  color: #fff;
-  padding: 15px 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 18px;
-}
-
-.create-group-form button:hover {
-  background-color: darkblue;
-}
-
-.selectoption select {
   padding: 10px;
-  border: 2px solid #ffffff;
-  border-radius: 5px;
-  background-color: white;
-  color: #1b21c3;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 16px;
-  width: 100%;
+  color: black;
+}
+
+buttonCreate {
+  padding: 1rem;
+  display: block;
+  background-color: rgb(201, 200, 200) ;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
   cursor: pointer;
-  appearance: none;
+  font-weight: bold;
 }
 
-.selectoption select:focus {
-  outline: none;
-}
-
-.selectoption select::-ms-expand,
-.selectoption select::-ms-value {
-  display: none;
-}
-
-.selectoption select::before {
-  content: "▼";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.selectoption select:hover {
-  border-color: #1b21c3;
-  background-color: #ffffff;
-  transition: 0.3s;
+buttonCreate:hover
+{
+background-color: rgb(52, 52, 52);
+color: rgb(255, 255, 255);
+transition: background-color 0.5s, color 0.5s;
 }

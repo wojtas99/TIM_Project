@@ -20,7 +20,7 @@ function StartPage() {
     <div className="main-page">
       <div className={`auth-form-StartPage ${isAnimated ? "animate" : ""}`}>
              <labelStartPage>
-              Welcome to Our Website{"\n"}
+              <hwelcome>Welcome to Our Website{"\n"}{"\n"}</hwelcome>
               Want to try a new sport?{"\n"}
               But you don't know where to seek for it?{"\n"}
               We are here just for YOU!

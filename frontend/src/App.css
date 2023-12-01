@@ -1,8 +1,8 @@
 .main-page
 {
-background-image: url("C:\ProjektyGit\TIM_Project\back_v2.jpg");
+background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
 background-size: cover;
-font-family: Arial, sans-serif;
+font-family: sans-serif;
 color: white;
 display: flex;
 justify-content: center;
@@ -28,9 +28,9 @@ font-size: 24px;
 }
 .auth-form-container-button:hover
 {
-background-color: rgba(0, 0, 0);
-color: rgb(0, 255, 0);
-transition: background-color 1s, color 0.3s;
+background-color: rgb(55, 55, 55);
+color: rgb(255, 255, 255);
+transition: background-color 0.5s, color 0.5s;
 cursor: pointer;
 }
 @keyframes slideInFromBottom {

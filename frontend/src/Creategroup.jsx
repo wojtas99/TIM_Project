@@ -16,7 +16,6 @@ function CreateGroup() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Tworzymy obiekt z danymi do przesłania
     const data = {
       trainer: trainer,
       size: size,
@@ -24,7 +23,6 @@ function CreateGroup() {
       time: time,
     };
 
-    // Wysyłamy dane za pomocą żądania AJAX
     fetch("http://127.0.0.1:8000/creategroup", {
       method: "POST",
       headers: {
@@ -46,11 +44,9 @@ function CreateGroup() {
 
 
   return (
-    <div className="topbar">
-      <TopBar />
-      <div className="create-page">
-        <form className="create-group-form" onSubmit={handleSubmit}>
-          <h2>Create New Group</h2><br></br><br></br>
+      <div className="main-page">
+        <form className="create-group-form">
+          <createheader>Create New Group</createheader>
           <div className="selectoption">
             <select value={selectedOption} onChange={handleOptionChange}>
               <option value="">Choose a discipline</option>
@@ -70,10 +66,9 @@ function CreateGroup() {
           <input value={date} onChange={(e) => setDate(e.target.value)} type="date" placeholder="Date" id="date" name="date" />  
           <label htmlFor="size">Time</label>
           <input value={time} onChange={(e) => setTime(e.target.value)} type="time" placeholder="Time" id="time" name="time" />
-          <button type="submit">Create Group!</button>
+          <buttonCreate type="submit">Create Group!</buttonCreate>
         </form>
       </div>
-    </div>
   );
 }
 
