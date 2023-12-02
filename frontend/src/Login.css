@@ -1,7 +1,9 @@
 labelLogin
 {
+font-family: sans-serif;
 text-align: left;
 font-size: 30px;
+padding-bottom: 20px;
 }
 buttonLogin
 {
@@ -11,12 +13,13 @@ padding: 20px;
 border-radius: 10px;
 text-align: center;
 cursor: pointer;
+font-weight: bold;
 }
 buttonLogin:hover
 {
-background-color: rgba(0, 0, 0);
-color: rgb(0, 255, 0);
-transition: background-color 1s, color 0.3s;
+background-color: rgb(52, 52, 52);
+color: rgb(255, 255, 255);
+transition: background-color 0.5s, color 0.5s;
 }
 input
 {
@@ -40,6 +43,8 @@ font-size: 16px;
 {
   animation: slideInFromRight 1.5s ease forwards;
 }
+
+
 @keyframes slideInFromRight {
   from {
     transform: translateX(100%);

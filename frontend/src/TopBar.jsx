@@ -1,22 +1,25 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./TopBar.css";
 import { VscAccount, VscGear } from "react-icons/vsc";
 import { useNavigate } from 'react-router-dom';
 
 function TopBar() {
   const navigate = useNavigate();
+  const [isAnimated, setIsAnimated] = useState(false);  
   const handleNavigation = (destination) => {
     navigate(destination);
   };
 
+  useEffect(() => {
+    setIsAnimated(true);
+}, []);
+
   return (
-    <div className="topbar">
+    <div className={`topbar ${isAnimated ? "animate" : ""}`}>
       <div className="topbarWrapper">
-        <div className="topLeft">
           <button2 className="logo" onClick={() => handleNavigation('/dashboard')}>
             Dashboard
           </button2>
-        </div>
         <div className="topRight">
         <div className="topbarIconSet">
             <VscGear />

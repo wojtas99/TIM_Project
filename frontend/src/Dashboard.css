@@ -1,12 +1,14 @@
-.sidebarDashboard
+.dashboard-page
 {
-height: 100%;
-width: 160px;
-position: fixed;
-top: 0;
-left: 0;
-background-color: rgb(0, 0, 0) ;
+background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
+background-size: cover;
+font-family: sans-serif;
+color: white;
+display: flex;
+height: 100vh;
+flex-direction: column;
 }
+<<<<<<< HEAD
 .sidebarDashboard dLabel {
 text-decoration: none;
 font-size: 50px;
@@ -25,4 +27,13 @@ display: block;
 .sidebarDashboard dButton:hover {
 cursor: pointer;
 color: rgb(0, 200, 0);
+=======
+
+
+.managing-groups{
+    padding: 20px;
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+>>>>>>> 4e66d3e1928a684098fc2fbf5bd4b9fffa6ef127
 }

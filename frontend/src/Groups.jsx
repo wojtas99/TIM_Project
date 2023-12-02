@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Groups.css';
 
 const GroupsMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const [isAnimated, setIsAnimated] = useState(false);
 
   const handleNavigation = (destination) => {
     navigate(destination);
@@ -14,8 +15,12 @@ const GroupsMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    setIsAnimated(true);
+}, []);
+
   return (
-    <div className="groups-menu" onMouseEnter={toggleMenu} onMouseLeave={toggleMenu}>
+    <div className={`groups-menu ${isAnimated ? "animate" : ""}`} onMouseEnter={toggleMenu} onMouseLeave={toggleMenu}>
       <div className="groups-title" onClick={toggleMenu}>Groups</div>
       {isOpen && (
         <div className="options">
