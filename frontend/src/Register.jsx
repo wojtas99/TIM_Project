@@ -5,7 +5,7 @@ import './Register.css';
 import './App.css';
 
 const SignUp = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
