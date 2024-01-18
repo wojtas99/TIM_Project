@@ -8,8 +8,25 @@ display: flex;
 height: 100vh;
 flex-direction: column;
 }
-
-
+.sidebarDashboard dLabel {
+text-decoration: none;
+font-size: 50px;
+color: rgb(255, 255, 255);
+}
+.sidebarDashboard dLabel:hover {
+cursor: pointer;
+color: rgb(0, 200, 0);
+}
+.sidebarDashboard dButton {
+text-decoration: none;
+font-size: 50px;
+color: rgb(255, 255, 255);
+display: block;
+}
+.sidebarDashboard dButton:hover {
+cursor: pointer;
+color: rgb(0, 200, 0);
+}
 .managing-groups{
     padding: 20px;
     font-family: sans-serif;

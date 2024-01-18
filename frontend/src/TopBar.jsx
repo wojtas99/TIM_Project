@@ -24,9 +24,9 @@ function TopBar() {
         <div className="topbarIconSet">
             <VscGear />
           </div>          
-          <button2 className="topbarIconAcc" onClick={() => handleNavigation('/profile')}>
+          <button_account className="topbarIconAcc" onClick={() => handleNavigation('/profile')}>
             <VscAccount />
-          </button2>
+          </button_account>
         </div>
       </div>
     </div>

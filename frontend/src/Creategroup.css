@@ -33,7 +33,7 @@ createheader {
 }
 
 buttonCreate {
-  padding: 1rem;
+  padding: 2rem;
   display: block;
   background-color: rgb(201, 200, 200) ;
   color: rgb(0, 0, 0);
@@ -42,6 +42,7 @@ buttonCreate {
   text-align: center;
   cursor: pointer;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 buttonCreate:hover

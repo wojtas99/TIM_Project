@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Profile.css";
-import TopBar from "./TopBar"; 
+
 import { useNavigate } from 'react-router-dom';
 function Profile() {
     const navigate = useNavigate();
@@ -47,10 +47,9 @@ function Profile() {
   };
 
   return (
-    <div className="topbar">
-      <TopBar />
-      <div className="profile-page">
-        <form className="profile-group-form" onSubmit={handleSubmit}>
+
+      <div className="main-page">
+        <form className="create-group-form" onSubmit={handleSubmit}>
           <h2>Edit Your Profile</h2><br></br><br></br>
           <label htmlFor="login">Login</label>
           <input value={login} onChange={(e) => setLogin(e.target.value)} type="text" placeholder="Your Login" id="login" name="login" />
@@ -62,11 +61,11 @@ function Profile() {
           <input value={fname} onChange={(e) => setFname(e.target.value)} type="text" placeholder="First Name" id="fname" name="fname" />
           <label htmlFor="email">Last Name</label>
           <input value={lname} onChange={(e) => setLname(e.target.value)} type="text" placeholder="Last Name" id="lname" name="lname" />
-          <button type="submit">Submit Changes</button>
-          <button onClick={handleLogout}>Logout</button>
+          <buttonCreate type="submit">Submit Changes</buttonCreate>
+          <buttonCreate onClick={handleLogout}>Logout</buttonCreate>
         </form>
       </div>
-    </div>
+
   );
 }
 

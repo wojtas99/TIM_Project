@@ -24,7 +24,7 @@ const navigate = useNavigate();
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, email, password }), // Include email in the request
+        body: JSON.stringify({ username, email, password }), 
       });
 
        if (!response.ok) {
