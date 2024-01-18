@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
+from .models import sportGroups
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -12,3 +13,9 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'password', 'email', 'first_name', 'last_name']
         extra_kwargs = {'password': {'write_only': True}}
+
+
+class SportGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = sportGroups
+        fields = ['id', 'discipline', 'trainer_name', 'max_size', 'actual_size']
