@@ -64,11 +64,6 @@ const CreateGroup = () => {
           <input value={date} onChange={(e) => setDate(e.target.value)} type="date" placeholder="Date" id="date" name="date" />  
           <label htmlFor="size">Time</label>
           <input value={time} onChange={(e) => setTime(e.target.value)} type="time" placeholder="Time" id="time" name="time" />
-        
-<<<<<<< HEAD
-=======
-        
->>>>>>> main
           <buttonCreate onClick={handleSubmit}>Create Group!</buttonCreate>
         </form>
       </div>
