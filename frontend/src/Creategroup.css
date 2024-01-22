@@ -2,7 +2,6 @@
   background-color: rgba(71, 70, 70, 0.7);
   border-radius: 10px;
   padding: 1rem;
-  max-width: 400px;
   width: 100%;
   text-align: left;
   font-size: larger;
@@ -10,14 +9,17 @@
   padding-bottom: 3rem;
 }
 
-createheader {
-  font-size: 1.5rem;
+.create-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.selectoption {
-  margin-bottom: 20px;
-  padding-top: 2rem;
-
+createheader {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .create-group-form input,
@@ -29,7 +31,7 @@ createheader {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  color: black;
+  color: rgb(45, 45, 45);
 }
 
 buttonCreate {
@@ -50,4 +52,22 @@ buttonCreate:hover
 background-color: rgb(52, 52, 52);
 color: rgb(255, 255, 255);
 transition: background-color 0.5s, color 0.5s;
+}
+
+
+.create-group-form.animate
+{
+  animation: slideInFromRight 1.5s ease forwards;
+}
+
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(10);
+    opacity: 1;
+  }
 }

@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Creategroup.css";
+import TopBar from "./TopBar";
 
 const CreateGroup = () => {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState('');
   const [trainer_name, setTrainer_name] = useState('');
   const [discipline, setDiscipline] = useState('');
+  const [max_size, setMax_size] = useState('');
+  const [start_date, setDate] = useState('');
+  const [start_time, setTime] = useState('');
   const [setError] = useState('');
-  const [size, setSize] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [isAnimated, setIsAnimated] = useState(false);
 
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+
+  useEffect(() => {
+    setIsAnimated(true);
+}, []);
+
 
   const handleSubmit = async () => {
     try {
@@ -23,7 +26,7 @@ const CreateGroup = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ discipline, trainer_name}), // Include email in the request
+        body: JSON.stringify({ discipline, trainer_name, max_size, start_date, start_time }), // Include email in the request
       });
 
       if (!response.ok) {
@@ -39,33 +42,28 @@ const CreateGroup = () => {
   }
 };
 
-
-  const navigateToStartPage = () => {
-    navigate("/");
-  };
-
-
   return (
     
-      <div className="main-page">
+      <div className="dashboard-page"> 
+        <TopBar></TopBar>
+        <div className="create-page"> 
+          <div className={`create-group-form ${isAnimated ? "animate" : ""}`}>
+            <createheader>Create New Group</createheader>
+            <br/>
+            <label htmlFor="Discipline">Discipline</label>
+            <input value={discipline} onChange={(e) => setDiscipline(e.target.value)} type="text" placeholder="Discipline" id="discipline" name="discipline" />
+            <label htmlFor="trainer_name">Trainer</label>
+            <input value={trainer_name} onChange={(e) => setTrainer_name(e.target.value)} type="text" placeholder="Name of Trainer" id="trainer_name" name="trainer_name" />
 
-        
-        <form className="create-group-form">
-          <createheader>Create New Group</createheader>
-              
-          <label htmlFor="discipline">discipline</label>
-          <input value={discipline} onChange={(e) => setDiscipline(e.target.value)} type="text" placeholder="discipline" id="discipline" name="discipline" />
-          <label htmlFor="trainer_name">Trainer</label>
-          <input value={trainer_name} onChange={(e) => setTrainer_name(e.target.value)} type="text" placeholder="Trainer" id="trainer_name" name="trainer_name" />
-
-          <label htmlFor="size">Size</label>
-          <input value={size} onChange={(e) => setSize(e.target.value)} type="number" placeholder="Size of group" id="size" name="size" />  
-          <label htmlFor="size">Date</label>
-          <input value={date} onChange={(e) => setDate(e.target.value)} type="date" placeholder="Date" id="date" name="date" />  
-          <label htmlFor="size">Time</label>
-          <input value={time} onChange={(e) => setTime(e.target.value)} type="time" placeholder="Time" id="time" name="time" />
-          <buttonCreate onClick={handleSubmit}>Create Group!</buttonCreate>
-        </form>
+            <label htmlFor="max_size">Size</label>
+            <input value={max_size} onChange={(e) => setMax_size(e.target.value)} type="number" placeholder="Maximal size of group" id="max_size" name="max_size" />  
+            <label htmlFor="start_date">Date</label>
+            <input value={start_date} onChange={(e) => setDate(e.target.value)} type="date" placeholder="Date" id="start_date" name="start_date" />  
+            <label htmlFor="start_time">Time</label>
+            <input value={start_time} onChange={(e) => setTime(e.target.value)} type="time" placeholder="Time" id="start_time" name="start_time" />
+            <buttonCreate onClick={handleSubmit}>Create Group!</buttonCreate>
+          </div>
+          </div>
       </div>
   );
 };

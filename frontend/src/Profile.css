@@ -24,4 +24,19 @@
   }
   
 
-  
+  .auth-form-Login.animate
+{
+  animation: slideInFromRight 1.5s ease forwards;
+}
+
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(10);
+    opacity: 1;
+  }
+}

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Profile.css";
+import TopBar from "./TopBar";
 
 import { useNavigate } from 'react-router-dom';
 function Profile() {
@@ -9,6 +10,12 @@ function Profile() {
     const [email_address, setEmail] = useState("");
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
+    const [isAnimated, setIsAnimated] = useState(false);
+
+    useEffect(() => {
+      setIsAnimated(true);
+  }, []);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,10 +54,12 @@ function Profile() {
   };
 
   return (
-
-      <div className="main-page">
-        <form className="create-group-form" onSubmit={handleSubmit}>
-          <h2>Edit Your Profile</h2><br></br><br></br>
+    <div className="main-page">
+      <TopBar></TopBar>
+      <div className="create-page">
+        <div className={`create-group-form ${isAnimated ? "animate" : ""}`}>
+          <createheader>Edit Your Profile</createheader>             
+          <br/>
           <label htmlFor="login">Login</label>
           <input value={login} onChange={(e) => setLogin(e.target.value)} type="text" placeholder="Your Login" id="login" name="login" />
           <label htmlFor="password">Password</label>
@@ -63,7 +72,8 @@ function Profile() {
           <input value={lname} onChange={(e) => setLname(e.target.value)} type="text" placeholder="Last Name" id="lname" name="lname" />
           <buttonCreate type="submit">Submit Changes</buttonCreate>
           <buttonCreate onClick={handleLogout}>Logout</buttonCreate>
-        </form>
+        </div>
+        </div>
       </div>
 
   );

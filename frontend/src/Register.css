@@ -37,7 +37,7 @@ font-size: 16px;
   border-radius: 10px;
   padding: 2rem;
   opacity: 0;
-  background-color: rgba(71, 70, 70, 0.7);
+  background-color: rgba(50, 50, 50, 0.8);
 }
 .auth-form-Register.animate
 {

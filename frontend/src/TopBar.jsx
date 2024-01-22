@@ -1,7 +1,14 @@
 import React, {useState, useEffect} from "react";
 import "./TopBar.css";
-import { VscAccount, VscGear } from "react-icons/vsc";
+import { VscAccount } from "react-icons/vsc";
 import { useNavigate } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import 'bootstrap/dist/css/bootstrap.min.css';
+ 
+
 
 function TopBar() {
   const navigate = useNavigate();
@@ -16,20 +23,26 @@ function TopBar() {
 
   return (
     <div className={`topbar ${isAnimated ? "animate" : ""}`}>
-      <div className="topbarWrapper">
-          <button2 className="logo" onClick={() => handleNavigation('/dashboard')}>
-            Dashboard
-          </button2>
-        <div className="topRight">
-        <div className="topbarIconSet">
-            <VscGear />
-          </div>          
-          <button_account className="topbarIconAcc" onClick={() => handleNavigation('/profile')}>
-            <VscAccount />
-          </button_account>
-        </div>
-      </div>
+      <Navbar  data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="/dashboard">Dashboard</Navbar.Brand>
+            <Nav className="me-auto">
+              <NavDropdown title="Groups" id="collapsible-nav-dropdown">
+                      <NavDropdown.Item href="/creategroup">Create Group</NavDropdown.Item>
+                      <NavDropdown.Item href="/joingroup">Join New Group</NavDropdown.Item>                      
+                      <NavDropdown.Item href="/manage">Manage Your Groups</NavDropdown.Item>
+              </NavDropdown>
+              <div className="topRight">
+                <Nav.Link href="/">Logout</Nav.Link>
+                <button_account className="topbarIconAcc" onClick={() => handleNavigation('/profile')}>
+                  <VscAccount />
+                </button_account>
+              </div>
+            </Nav>
+          </Container>
+      </Navbar>
     </div>
+
   );
 }
 

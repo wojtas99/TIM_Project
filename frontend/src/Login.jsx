@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import './App.css';
-import { IoIosHome } from "react-icons/io";
+import { IoIosHome } from "react-icons/io"
+
 const Login = () => {
 const navigate = useNavigate();
 const [username, setUsername] = useState('');
@@ -44,6 +45,8 @@ const [setError] = useState('');
  const navigateToStartPage = () => {
     navigate("/");
   };
+
+  
  return (
     <div className="main-page">
       <div className={`auth-form-Login ${isAnimated ? "animate" : ""}`}>

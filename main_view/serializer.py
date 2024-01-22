@@ -18,4 +18,4 @@ class UserSerializer(serializers.ModelSerializer):
 class SportGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = sportGroups
-        fields = ['id', 'discipline', 'trainer_name', 'max_size', 'actual_size', 'date', 'time']
+        fields = ['id', 'discipline', 'trainer_name', 'max_size', 'actual_size', 'start_date', 'start_time']

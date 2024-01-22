@@ -6,6 +6,8 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 import Creategroup from "./Creategroup";
 import Profile from "./Profile";
+import Joingroup from "./Groups/Joingroup";
+
 function App() {
   const [isContentVisible, setIsContentVisible] = useState(true);
 
@@ -35,7 +37,11 @@ function App() {
         <Route
           path="/profile"
           element={<Profile isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
-        />           
+        />   
+        <Route
+          path="/joingroup"
+          element={<Joingroup isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
+        />   
       </Routes>
     </Router>
   );
