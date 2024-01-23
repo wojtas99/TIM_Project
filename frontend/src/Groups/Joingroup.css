@@ -1,0 +1,134 @@
+/* Joingroup.css */
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .page-item {
+    margin: 3px; /* Dodatkowy margines między elementami paginacji */
+  }
+  
+  .page-link {
+    color: black; /* Kolor tekstu dla paginacji */
+    background-color: #ccc; /* Kolor tła dla paginacji */
+    border: 1px solid #ccc; /* Kolor obramowania dla paginacji */
+    border-radius: 4px; /* Zaokrąglenie rogów dla paginacji */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-item.active .page-link {
+    color: white; /* Kolor tekstu dla aktywnego linku paginacji */
+    background-color: #333; /* Kolor tła dla aktywnego linku paginacji */
+    border-color: #333; /* Kolor obramowania dla aktywnego linku paginacji */
+  }
+  
+  .page-link:hover {
+    background-color: #f5f5f5; /* Kolor tła dla paginacji po najechaniu myszką */
+    color: black; /* Kolor tekstu dla paginacji po najechaniu myszką */
+  }
+  
+
+
+/* Dostosowane style dla Dropdown */
+.custom-dropdown {
+    background-color: #333; /* Kolor tła dla aktywnego linku paginacji */
+  }
+  
+  /* Dostosowane style dla Dropdown.Toggle */
+  .custom-dropdown-toggle {
+    color: black; /* Kolor tekstu dla rozwijanego menu */
+    background-color: #ccc; /* Kolor tła dla rozwijanego menu */
+    border: 1px solid #454545; /* Kolor obramowania dla rozwijanego menu */
+    border-radius: 4px; /* Zaokrąglenie rogów dla rozwijanego menu */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dostosowane style dla aktywnego Dropdown.Toggle po najechaniu */
+  .custom-dropdown-toggle:hover {
+    background-color: #333; /* Kolor tła dla rozwijanego menu po najechaniu myszką */
+  }
+  
+  /* Dostosowane style dla aktywnego Dropdown.Toggle po kliknięciu */
+  .custom-dropdown-toggle:active {
+    background-color: #ccc; /* Kolor tła dla rozwijanego menu po kliknięciu */
+  }
+  
+  .custom-dropdown-menu {
+    background-color: #ccc; /* Kolor tła dla elementów rozwijanego menu */
+  }
+  
+  /* Dostosowane style dla Dropdown.Item */
+  .custom-dropdown-item {
+    color: rgb(0, 0, 0); /* Kolor tekstu dla elementów rozwijanego menu */
+    border: 1px solid #ccc; /* Kolor obramowania dla elementów rozwijanego menu */
+    border-radius: 4px; /* Zaokrąglenie rogów dla elementów rozwijanego menu */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dostosowane style dla aktywnego Dropdown.Item */
+  .custom-dropdown-item:focus,
+  .custom-dropdown-item:hover {
+    background-color: #f5f5f5; /* Kolor tła dla elementów rozwijanego menu po najechaniu myszką */
+  }
+
+
+
+.create-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Odległość między elementami */
+  }
+  
+/* Joingroup.css */
+
+.group-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.group-item {
+  background-color: rgba(50, 50, 50, 0.8);
+  border: 1px solid #ccc; /* Grubość i kolor obramowania */
+  padding: 10px; /* Wewnętrzny odstęp */
+  border-radius: 8px; /* Zaokrąglenie rogów */
+}
+
+.group-item:hover {
+  cursor: pointer;
+  background-color: rgba(50, 50, 50, 1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+  
+  .create-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.items-list {
+  width: 100%; /* Działa na szerokości dostępnej dla elementów */
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Dostosuj margines według potrzeb */
+}
+
+.dropdown-custom {
+    position: fixed;
+    top: 60px; /* Adjust based on your navbar height */
+    left: 10px;
+  }
+
+.list-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

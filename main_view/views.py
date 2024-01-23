@@ -53,8 +53,9 @@ def create_group(request):
 
 
 @api_view(['GET'])
-def join_group():
+def join_group(request):
     groups = sportGroups.objects.all()
     serializer = SportGroupSerializer(groups, many=True)
+    print(serializer.data)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
