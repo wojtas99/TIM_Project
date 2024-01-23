@@ -59,3 +59,21 @@ def join_group(request):
     print(serializer.data)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+@api_view(['PUT'])
+def update_group(request):
+    group_id = request.data.get('id', None)
+    if group_id is None:
+        return Response({'error': 'id is required for updating'}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        group = sportGroups.objects.get(id=group_id)
+    except sportGroups.DoesNotExist:
+        return Response({'error': 'Group not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    if group.actual_size < group.max_size:
+        group.actual_size += 1
+        group.save()
+        serializer = SportGroupSerializer(group)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response({'error': 'Group is already at maximum size'}, status=status.HTTP_400_BAD_REQUEST)
