@@ -62,7 +62,6 @@ def join_group(request):
 
 @api_view(['PUT'])
 def update_group(request, group_id):
-    #group_id = request.data.get('id', None)
     if group_id is None:
         return Response({'error': 'id is required for updating'}, status=status.HTTP_400_BAD_REQUEST)
     try:
