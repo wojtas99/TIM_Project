@@ -72,7 +72,7 @@ const SignUp = () => {
         <label htmlFor="email">Email:</label>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="your.email@gmail.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           id="email"
@@ -80,15 +80,15 @@ const SignUp = () => {
         <label htmlFor="password">Password:</label>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="*******"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           id="password"
         />
         <buttonRegister onClick={handleSignUp}>Sign Up</buttonRegister>
       </div>
-            <div className={`auth-form-container-button ${isAnimated ? "animate" : ""}`}>
-       <IoIosHome onClick={navigateToStartPage} />
+            <div onClick={navigateToStartPage} className={`auth-form-container-button ${isAnimated ? "animate" : ""}`}>
+       <IoIosHome/>
       </div>
     </div>
   );

@@ -23,13 +23,13 @@ function StartPage() {
         <Card.Body>
         <Card.Title>Do You want to try a new sport?</Card.Title>
         <Card.Text>
-          You can join new sport groups that are nearby or create a new one.
+          You can join sport groups that are nearby or create a new one.
         </Card.Text>
-        <Button variant="primary" href="/login">Login</Button>
+        <Button variant="dark" href="/login" className='startpage-button'>Login</Button>
 
-        <Button variant="primary" href="/signup">Register</Button>
+        <Button variant="dark" href="/signup" className='startpage-button'>Register</Button>
       </Card.Body>
-      <Card.Footer>Join Us now!</Card.Footer>
+
       </Card>
     </div>
   );

@@ -2,7 +2,8 @@
 {
 background-image: url("C:\Projekt\TIM_Project\back_v2.jpg");
 background-size: cover;
-font-family: sans-serif;
+font-family: 'Montserrat';
+font-size: 20px;
 color: white;
 display: flex;
 height: 100vh;

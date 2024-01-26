@@ -33,7 +33,7 @@ const GroupInvite = () => {
 
 
   return (
-    <div className="dashboard-page">
+    <div className="main-page">
       <TopBar></TopBar>
       <div className="create-page">
         <div className={`create-group-form ${isAnimated ? "animate" : ""}`}>

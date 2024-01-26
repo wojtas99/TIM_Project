@@ -4,25 +4,23 @@
     border-radius: 10px;
     padding: 1rem;
     max-width: 400px;
-    width: 100%;
-    text-align: left;
-    font-size: larger;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
   }
   
   .profile-group-form button {
     background-color: rgba(71, 70, 70, 0.7);
     border-radius: 10px;
     padding: 1rem;
-    max-width: 400px;
-    width: 100%;
-    text-align: left;
-    font-size: larger;
+    max-width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-bottom: 3rem;
   }
   
+  createheader{
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+  }
 
   .auth-form-Login.animate
 {

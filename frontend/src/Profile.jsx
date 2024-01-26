@@ -71,7 +71,6 @@ function Profile() {
           <label htmlFor="email">Last Name</label>
           <input value={lname} onChange={(e) => setLname(e.target.value)} type="text" placeholder="Last Name" id="lname" name="lname" />
           <buttonCreate type="submit">Submit Changes</buttonCreate>
-          <buttonCreate onClick={handleLogout}>Logout</buttonCreate>
         </div>
         </div>
       </div>

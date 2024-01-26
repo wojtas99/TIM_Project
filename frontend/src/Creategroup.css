@@ -1,13 +1,3 @@
-.create-group-form {
-  background-color: rgba(71, 70, 70, 0.7);
-  border-radius: 10px;
-  padding: 1rem;
-  width: 100%;
-  text-align: left;
-  font-size: larger;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding-bottom: 3rem;
-}
 
 .create-page {
   display: flex;
@@ -19,7 +9,9 @@
 createheader {
   font-size: 2rem;
   font-weight: bold;
+  justify-content: center;
   text-align: center;
+  text-decoration: underline;
 }
 
 .create-group-form input,
