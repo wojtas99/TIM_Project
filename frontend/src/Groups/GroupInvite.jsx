@@ -15,13 +15,18 @@ const GroupInvite = () => {
 
   const handleJoinUsClick = async () => {
     try {
+      const token = localStorage.getItem("authToken")
       const response = await fetch(`http://localhost:8000/group/${groupId}`, {
         method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${token}`,
+        },
       });
-
+      
       if (response.ok) {
         alert('Dołączono do grupy!');
-        navigate('/dashboard'); // Używamy navigate zamiast history.push
+        navigate('/joingroup'); 
       } else {
         alert('Błąd podczas dołączania do grupy');
       }
