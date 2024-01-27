@@ -21,10 +21,12 @@ const CreateGroup = () => {
 
   const handleSubmit = async () => {
     try {
+      const token = localStorage.getItem("authToken")
       const response = await fetch('http://localhost:8000/creategroup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Token ${token}`,
         },
         body: JSON.stringify({ discipline, trainer_name, max_size, start_date, start_time }), // Include email in the request
       });
@@ -44,7 +46,7 @@ const CreateGroup = () => {
 
   return (
     
-      <div className="dashboard-page"> 
+      <div className="main-page"> 
         <TopBar></TopBar>
         <div className="create-page"> 
           <div className={`create-group-form ${isAnimated ? "animate" : ""}`}>

@@ -1,7 +1,8 @@
 labelLogin
 {
-font-family: sans-serif;
-text-align: left;
+text-align: center;
+text-decoration: underline;
+font-weight: bold;
 font-size: 30px;
 padding-bottom: 20px;
 }
@@ -9,6 +10,7 @@ buttonLogin
 {
 background-color: rgb(201, 200, 200) ;
 color: rgb(0, 0, 0);
+margin-top: 5px;
 padding: 20px;
 border-radius: 10px;
 text-align: center;
@@ -23,24 +25,28 @@ transition: background-color 0.5s, color 0.5s;
 }
 input
 {
-margin: 0.5rem 0;
+margin: 0.5rem;
 padding: 1rem;
 border: none;
 border-radius: 10px;
-border: 1px solid #ccc;
+border: 1px solid #000000;
 font-size: 16px;
 }
-.auth-form-Login
-{
+.auth-form-Login {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   padding: 1rem;
   opacity: 0;
   background-color: rgba(50, 50, 50, 0.8);
+  transition: transform 0.3s ease; /* Dodanie płynności dla transformacji */
 }
-.auth-form-Login.animate
-{
+
+.auth-form-Login:hover {
+  transform: scale(1.1) 0.5s; /* Powiększenie elementu po najechaniu myszką */
+}
+
+.auth-form-Login.animate {
   animation: slideInFromRight 1.5s ease forwards;
 }
 

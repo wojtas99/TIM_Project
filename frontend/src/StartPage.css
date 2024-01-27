@@ -1,45 +1,17 @@
-buttonStartPageLogin
+.startpage-button
 {
-background-color: rgb(201, 200, 200) ;
-color: rgb(0, 0, 0);
-padding: 20px;
-width: 150px;
-height: 20px;
+padding: 10px;
 border-radius: 10px;
 text-align: center;
 font-weight: bold;
 cursor: pointer;
-position: fixed;
-bottom: 80px;
-right: 150px;
-}
-buttonStartPageLogin:hover
-{
-background-color: rgb(52, 52, 52);
-color: rgb(255, 255, 255);
-transition: background-color 0.5s, color 0.5s;
+margin: 5px
 }
 
-
-buttonStartPageRegister
+.startpage-button:hover
 {
-background-color: rgb(201, 200, 200) ;
+background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);
-padding: 20px;
-width: 150px;
-height: 20px;
-border-radius: 10px;
-text-align: center;
-font-weight: bold;
-cursor: pointer;
-position: fixed;
-bottom: 10px;
-right: 150px;
-}
-buttonStartPageRegister:hover
-{
-background-color: rgb(52, 52, 52);
-color: rgb(255, 255, 255);
 transition: background-color 0.5s, color 0.5s;
 }
 
@@ -58,9 +30,7 @@ transition: background-color 0.5s, color 0.5s;
   }
 }
 
-hwelcome {
-  font-size: 40px;
-}
+
 
 .custom-card {
   color: white;

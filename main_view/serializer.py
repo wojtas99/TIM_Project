@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
-from .models import sportGroups
+from .models import sportGroups, Membership
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -18,4 +18,11 @@ class UserSerializer(serializers.ModelSerializer):
 class SportGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = sportGroups
-        fields = ['id', 'discipline', 'trainer_name', 'max_size', 'actual_size', 'start_date', 'start_time']
+        fields = ['id', 'discipline', 'trainer_name', 'max_size', 'actual_size', 'start_date', 'start_time', 'trainer']
+
+
+class MembershipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Membership
+        fields = ['user', 'group']
+

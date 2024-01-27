@@ -62,15 +62,15 @@ const [setError] = useState('');
         <label htmlFor="password">Password:</label>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="********"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           id="password"
         />
         <buttonLogin onClick={handleLogin}>Login</buttonLogin>
-        </div>
-            <div className={`auth-form-container-button ${isAnimated ? "animate" : ""}`}>
-       <IoIosHome onClick={navigateToStartPage} />
+      </div>
+            <div onClick={navigateToStartPage} className={`auth-form-container-button ${isAnimated ? "animate" : ""}`}>
+       <IoIosHome/>
       </div>
       </div>
   );
