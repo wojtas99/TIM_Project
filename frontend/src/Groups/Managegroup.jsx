@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Form, InputGroup, Button, Dropdown } from 'react-bootstrap';
-import "./Joingroup.css";
 import TopBar from "../TopBar";
+import axios from 'axios';
 import GroupItem from "./Groupitem";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Joingroup = () => {
+const Managegroup = () => {
   const [groups, setGroups] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
 
+
   useEffect(() => {
     const fetchGroups = async (token) => {
       try {
-        const response = await fetch('http://localhost:8000/joingroup', {
+        const response = await fetch('http://localhost:8000/manage', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -85,4 +86,4 @@ const Joingroup = () => {
   );
   };
   
-  export default Joingroup;
+  export default Managegroup;

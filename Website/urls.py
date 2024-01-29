@@ -7,4 +7,5 @@ urlpatterns = [
     path('creategroup', views.create_group, name="Create_group"),
     path('joingroup', views.join_group, name="Join_group"),
     re_path(r'^group/(\d+)', views.update_group, name='Update_group'),
+    path('manage', views.show_group, name="Show_Group"),
     ]
