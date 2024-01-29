@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Creategroup.css";
-import TopBar from "./TopBar";
+import TopBar from "../../TopBar/TopBar";
 
 const CreateGroup = () => {
   const navigate = useNavigate();

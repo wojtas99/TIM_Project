@@ -1,7 +1,6 @@
 import React from "react";
-import './App.css';
 import "./Dashboard.css";
-import TopBar from "./TopBar";
+import TopBar from "../TopBar/TopBar";
 
 const Dashboard = () => {
         return (

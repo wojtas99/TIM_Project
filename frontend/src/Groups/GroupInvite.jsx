@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom"; 
-import TopBar from "../TopBar";
+import TopBar from "../TopBar/TopBar";
 
 const GroupInvite = () => {
   const [isAnimated, setIsAnimated] = useState(false);

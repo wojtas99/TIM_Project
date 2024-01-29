@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import StartPage from "./StartPage";
-import Login from "./Login";
-import Register from "./Register";
-import Dashboard from "./Dashboard";
-import Creategroup from "./Creategroup";
-import Profile from "./Profile";
-import Joingroup from "./Groups/Joingroup";
+import StartPage from "./StartPage/StartPage";
+import Login from "./Login/Login";
+import Register from "./Register/Register";
+import Dashboard from "./Dashboard/Dashboard";
+import Creategroup from "./Groups/CreateGroup/Creategroup";
+import Profile from "./Profile/Profile";
+import Joingroup from "./Groups/JoinGroup/Joingroup";
 import GroupInvite from "./Groups/GroupInvite";
 import Managegroup from "./Groups/Managegroup";
+import Groupsquad from "./Groups/Groupsquad";
 
 function App() {
   const [isContentVisible, setIsContentVisible] = useState(true);
@@ -49,9 +50,13 @@ function App() {
           element={<GroupInvite isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
         />   
         <Route
-          path="manage"
+          path="/manage"
           element={<Managegroup isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
-        />    
+        />
+        <Route
+          path="/groupsquad/:id"
+          element={<Groupsquad isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
+        />       
       </Routes>
     </Router>
   );

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Form, InputGroup, Button, Dropdown } from 'react-bootstrap';
 import "./Joingroup.css";
-import TopBar from "../TopBar";
-import GroupItem from "./Groupitem";
+import TopBar from "../../TopBar/TopBar";
+import GroupItem from "../Groupitem";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Joingroup = () => {
@@ -46,7 +46,6 @@ const Joingroup = () => {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = groups.slice(indexOfFirstItem, indexOfLastItem);
-
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (

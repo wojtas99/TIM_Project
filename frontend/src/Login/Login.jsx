@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import './App.css';
 import { IoIosHome } from "react-icons/io"
 
 const Login = () => {

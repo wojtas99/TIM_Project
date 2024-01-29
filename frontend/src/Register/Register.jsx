@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosHome } from "react-icons/io";
 import './Register.css';
-import './App.css';
 
 const SignUp = () => {
   const navigate = useNavigate();

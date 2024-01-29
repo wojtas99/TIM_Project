@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, InputGroup, Button, Dropdown } from 'react-bootstrap';
-import TopBar from "../TopBar";
-import axios from 'axios';
-import GroupItem from "./Groupitem";
+import TopBar from "../TopBar/TopBar";
+import MyGroupItem from "./MyGroupitem";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Managegroup = () => {
@@ -69,7 +68,7 @@ const Managegroup = () => {
       </div>
       <div className="create-page">
             {currentItems.map((group) => (
-              <GroupItem key={group.id} group={group} />
+              <MyGroupItem key={group.id} group={group} />
             ))}
       </div>
 

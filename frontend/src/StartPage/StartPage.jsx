@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './StartPage.css';
-import './App.css';
+import '../App.css';
 
 function StartPage() {
   const [isAnimated, setIsAnimated] = useState(false);

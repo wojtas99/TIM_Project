@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Profile.css";
-import TopBar from "./TopBar";
+import TopBar from "../TopBar/TopBar";
 
 import { useNavigate } from 'react-router-dom';
 function Profile() {
