@@ -38,7 +38,6 @@ const CreateGroup = () => {
         alert("Grupa utworzona!");
         navigate('/dashboard')
       }
-    
   } catch (err) {
     setError(err.message);
   }

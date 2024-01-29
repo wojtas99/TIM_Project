@@ -95,3 +95,4 @@ def show_group(request):
     groups = Membership.objects.get(group_id=groups.id)
     serializer = SportGroupSerializer(groups, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
