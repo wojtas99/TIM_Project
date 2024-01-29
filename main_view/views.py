@@ -14,6 +14,7 @@ from .models import sportGroups, Membership
 @api_view(['POST'])
 def login(request):
     user = get_object_or_404(User, username=request.data['username'])
+    print(user)
     if not user.check_password(request.data['password']):
         return Response({"detail": "Not found."}, status=status.HTTP_404_NOT_FOUND)
     token, created = Token.objects.get_or_create(user=user)
@@ -49,12 +50,15 @@ def dashboard(request):
 def create_group(request):
     serializer = SportGroupSerializer(data=request.data)
     if serializer.is_valid():
+        serializer.validated_data['trainer_id'] = request.user.id
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def join_group(request):
     groups = sportGroups.objects.all()
     serializer = SportGroupSerializer(groups, many=True)
