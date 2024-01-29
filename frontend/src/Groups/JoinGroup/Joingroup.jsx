@@ -20,9 +20,18 @@ const Joingroup = () => {
             'Authorization': `Token ${token}`,
           },
         });
+
         if (response.ok) {
           const data = await response.json();
-          setGroups(data);
+
+          // Filtrowanie grup, pozostawiając tylko te, które są w przyszłości
+          const currentDate = new Date();
+          const futureGroups = data.filter((group) => {
+            const groupStartDate = new Date(group.start_date + 'T' + group.start_time);
+            return groupStartDate >= currentDate;
+          });
+
+          setGroups(futureGroups);
         }
       } catch (error) {
         console.error('Wystąpił błąd podczas pobierania danych', error);

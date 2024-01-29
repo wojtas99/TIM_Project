@@ -5,7 +5,6 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import Dashboard from "./Dashboard/Dashboard";
 import Creategroup from "./Groups/CreateGroup/Creategroup";
-import Profile from "./Profile/Profile";
 import Joingroup from "./Groups/JoinGroup/Joingroup";
 import GroupInvite from "./Groups/GroupInvite";
 import Managegroup from "./Groups/Managegroup";
@@ -36,10 +35,6 @@ function App() {
         <Route
           path="/creategroup"
           element={<Creategroup isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
-        />  
-        <Route
-          path="/profile"
-          element={<Profile isContentVisible={isContentVisible} setIsContentVisible={setIsContentVisible} />}
         />   
         <Route
           path="/joingroup"
