@@ -34,9 +34,6 @@ function TopBar() {
               </NavDropdown>
               <div className="topRight">
                 <Nav.Link href="/">Logout</Nav.Link>
-                <button_account className="topbarIconAcc" onClick={() => handleNavigation('/profile')}>
-                  <VscAccount />
-                </button_account>
               </div>
             </Nav>
           </Container>

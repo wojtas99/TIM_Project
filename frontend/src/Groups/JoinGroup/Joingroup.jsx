@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, InputGroup, Button, Dropdown } from 'react-bootstrap';
+import { Form, Button, Dropdown } from 'react-bootstrap';
 import "./Joingroup.css";
 import TopBar from "../../TopBar/TopBar";
 import GroupItem from "../Groupitem";
@@ -20,9 +20,18 @@ const Joingroup = () => {
             'Authorization': `Token ${token}`,
           },
         });
+
         if (response.ok) {
           const data = await response.json();
-          setGroups(data);
+
+          // Filtrowanie grup, pozostawiając tylko te, które są w przyszłości
+          const currentDate = new Date();
+          const futureGroups = data.filter((group) => {
+            const groupStartDate = new Date(group.start_date + 'T' + group.start_time);
+            return groupStartDate >= currentDate;
+          });
+
+          setGroups(futureGroups);
         }
       } catch (error) {
         console.error('Wystąpił błąd podczas pobierania danych', error);
