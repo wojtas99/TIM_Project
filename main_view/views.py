@@ -14,7 +14,6 @@ from .models import sportGroups, Membership
 @api_view(['POST'])
 def login(request):
     user = get_object_or_404(User, username=request.data['username'])
-    print(user)
     if not user.check_password(request.data['password']):
         return Response({"detail": "Not found."}, status=status.HTTP_404_NOT_FOUND)
     token, created = Token.objects.get_or_create(user=user)
@@ -62,7 +61,6 @@ def create_group(request):
 def join_group(request):
     groups = sportGroups.objects.all()
     serializer = SportGroupSerializer(groups, many=True)
-    print(serializer.data)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -91,8 +89,7 @@ def update_group(request, group_id):
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def show_group(request):
-    groups = sportGroups.objects.get(trainer_id=request.user.id)
-    groups = Membership.objects.get(group_id=groups.id)
+    groups = sportGroups.objects.all().filter(trainer_id=request.user.id)
     serializer = SportGroupSerializer(groups, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
