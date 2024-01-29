@@ -8,16 +8,15 @@ const Groupsquad = () => {
   const [people, setPeople] = useState([]);
   const { id } = useParams();
 
+
+
   useEffect(() => {
-    setGroupId(id);
     setIsAnimated(true);
-  }, [id]);
-
-
-  useEffect(() => {
-    const fetchPeople = async (token) => {
+    const token = localStorage.getItem("authToken");
+    setGroupId(id);
+    const fetchPeople = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/groupsquad/${groupId}`, {
+        const response = await fetch(`http://localhost:8000/groupsquad/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -32,10 +31,8 @@ const Groupsquad = () => {
         console.error('Wystąpił błąd podczas pobierania danych', error);
       }
     };
-
-    const token = localStorage.getItem("authToken");
     if (token) {
-      fetchPeople(token);
+      fetchPeople();
     } else {
       console.error('Brak tokena autoryzacyjnego');
     }

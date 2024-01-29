@@ -93,3 +93,14 @@ def show_group(request):
     serializer = SportGroupSerializer(groups, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def group_squad(request, group_id):
+    groups = Membership.objects.all().filter(group_id=group_id)
+    userid = [userid.user_id for userid in groups]
+    users = User.objects.all().filter(id__in=userid)
+    serializer = UserSerializer(users, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
